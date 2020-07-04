@@ -11,7 +11,7 @@ import android.content.SharedPreferences;
  * Ver 0.3 checkKey 추가
  * Ver 0.4 resetAll 추가
  */
-public class LukaSharingPreferences {
+public class CodeLukaSharingPreferences {
 
     // 고유 이름 * 패키지명 사용전 꼭 입력해야함
     private static String prefName;

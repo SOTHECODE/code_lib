@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 날짜 차이를 계산해주는 Manager
  */
-public class DateDifferenceManager {
+public class CodNoaheDateDifferenceManager {
 
     /**
      * String 타입을 날짜의 차이를 계싼한다.
