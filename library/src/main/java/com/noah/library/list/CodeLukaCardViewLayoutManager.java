@@ -22,10 +22,10 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
  * 1 = linear, 2 = Grid, 3 = Stagger
  */
 
-public class LukaCardViewLayoutManager {
+public class CodeLukaCardViewLayoutManager {
 
-    private static final String TAG = LukaCardViewLayoutManager.class.getSimpleName();
-    private volatile static LukaCardViewLayoutManager instance;
+    private static final String TAG = CodeLukaCardViewLayoutManager.class.getSimpleName();
+    private volatile static CodeLukaCardViewLayoutManager instance;
     private RecyclerView rcView;
     private Context context;
 
@@ -39,11 +39,11 @@ public class LukaCardViewLayoutManager {
      * getInstance()를 하고나서 init()을 사용해서 뷰와 콘텍스트를 추가한다.
      * @return instance
      */
-    public static LukaCardViewLayoutManager getInstance() {
+    public static CodeLukaCardViewLayoutManager getInstance() {
         if (instance == null) {
-            synchronized (LukaCardViewLayoutManager.class) {
+            synchronized (CodeLukaCardViewLayoutManager.class) {
                 if (instance == null) {
-                    instance = new LukaCardViewLayoutManager();
+                    instance = new CodeLukaCardViewLayoutManager();
                 }
             }
         }

@@ -1,13 +1,11 @@
 package com.noah.library.text;
 
-import com.noah.library.list.LukaCardViewLayoutManager;
-
 import java.util.regex.Pattern;
 
 /**
  * 패턴 매니저
  */
-public class PatternManager {
+public class CodeNoahPatternManager {
 
 
     /**

@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-public class LukaToolbarSettingHelper {
+public class CodeLukaToolbarSettingHelper {
 
     // Activity
     private AppCompatActivity mCompatActivity;
@@ -17,7 +17,7 @@ public class LukaToolbarSettingHelper {
     }
 
 
-    public LukaToolbarSettingHelper(AppCompatActivity activity) {
+    public CodeLukaToolbarSettingHelper(AppCompatActivity activity) {
         this.mCompatActivity = activity;
     }
 
