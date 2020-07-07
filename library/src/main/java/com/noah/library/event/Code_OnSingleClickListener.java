@@ -3,7 +3,7 @@ package com.noah.library.event;
 import android.os.SystemClock;
 import android.view.View;
 
-public abstract class OnSingleClickListener implements View.OnClickListener {
+public abstract class Code_OnSingleClickListener implements View.OnClickListener {
     // 중복 클릭 방지 시간 설정
     private static final long MIN_CLICK_INTERVAL=600;
 

@@ -1,4 +1,4 @@
-package com.noah.library.ui;
+package com.noah.library.lib;
 
 import android.view.View;
 
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-public class CodeLukaToolbarSettingHelper {
+public class Code_LukaToolbarSettingHelper {
 
     // Activity
     private AppCompatActivity mCompatActivity;
@@ -17,7 +17,7 @@ public class CodeLukaToolbarSettingHelper {
     }
 
 
-    public CodeLukaToolbarSettingHelper(AppCompatActivity activity) {
+    public Code_LukaToolbarSettingHelper(AppCompatActivity activity) {
         this.mCompatActivity = activity;
     }
 

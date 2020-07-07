@@ -1,4 +1,4 @@
-package com.noah.library.list;
+package com.noah.library.lib;
 
 import android.content.Context;
 
@@ -22,10 +22,10 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
  * 1 = linear, 2 = Grid, 3 = Stagger
  */
 
-public class CodeLukaCardViewLayoutManager {
+public class Code_LukaCardViewLayoutManager {
 
-    private static final String TAG = CodeLukaCardViewLayoutManager.class.getSimpleName();
-    private volatile static CodeLukaCardViewLayoutManager instance;
+    private static final String TAG = Code_LukaCardViewLayoutManager.class.getSimpleName();
+    private volatile static Code_LukaCardViewLayoutManager instance;
     private RecyclerView rcView;
     private Context context;
 
@@ -39,11 +39,11 @@ public class CodeLukaCardViewLayoutManager {
      * getInstance()를 하고나서 init()을 사용해서 뷰와 콘텍스트를 추가한다.
      * @return instance
      */
-    public static CodeLukaCardViewLayoutManager getInstance() {
+    public static Code_LukaCardViewLayoutManager getInstance() {
         if (instance == null) {
-            synchronized (CodeLukaCardViewLayoutManager.class) {
+            synchronized (Code_LukaCardViewLayoutManager.class) {
                 if (instance == null) {
-                    instance = new CodeLukaCardViewLayoutManager();
+                    instance = new Code_LukaCardViewLayoutManager();
                 }
             }
         }
