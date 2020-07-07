@@ -7,12 +7,12 @@ import android.widget.Toast;
  * Created by ryang on 2017-11-15.
  */
 
-public class BackPressCloseHandler {
+public class Code_BackPressCloseHandler {
 
     private long backKeyPressedTime = 0;
     private Activity activity;
 
-    public BackPressCloseHandler(Activity context){
+    public Code_BackPressCloseHandler(Activity context){
         this.activity = context;
     }
 

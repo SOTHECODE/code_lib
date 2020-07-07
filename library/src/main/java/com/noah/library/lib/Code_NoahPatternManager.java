@@ -1,11 +1,11 @@
-package com.noah.library.text;
+package com.noah.library.lib;
 
 import java.util.regex.Pattern;
 
 /**
  * 패턴 매니저
  */
-public class CodeNoahPatternManager {
+public class Code_NoahPatternManager {
 
 
     /**
