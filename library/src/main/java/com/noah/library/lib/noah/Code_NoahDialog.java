@@ -1,4 +1,4 @@
-package com.noah.library.lib;
+package com.noah.library.lib.noah;
 
 import android.app.Dialog;
 import android.content.Context;

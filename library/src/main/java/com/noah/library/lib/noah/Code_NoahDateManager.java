@@ -1,4 +1,4 @@
-package com.noah.library.lib;
+package com.noah.library.lib.noah;
 
 import android.util.Log;
 
@@ -201,6 +201,38 @@ public class Code_NoahDateManager {
         calDateDays = Math.abs(calDateDays);
 
         return calDateDays;
+    }
+
+    /**
+     * 지정날의 0시 0분 0초의 밀리세컨드를 리턴
+     *
+     * @param date    기준날짜
+     * @return long
+     * @throws Exception
+     */
+    public static long seltDateMinTime(String date) throws Exception {
+
+        return yyyyMMdd.parse(date).getTime();
+
+    }
+
+    /**
+     * 지정날의 23시 59분 59초의 밀리세컨드를 리턴
+     *
+     * @param date    기준날짜
+     * @return long
+     * @throws Exception
+     */
+    public static long seltDateMaxTime(String date) throws Exception {
+        Calendar cal = Calendar.getInstance();
+
+        cal.setTime(yyyyMMdd.parse(date));
+        cal.set(Calendar.HOUR_OF_DAY, 23);
+        cal.set(Calendar.MINUTE, 59);
+        cal.set(Calendar.SECOND, 59);
+
+        return cal.getTime().getTime();
+
     }
 
 }

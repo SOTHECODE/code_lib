@@ -1,4 +1,4 @@
-package com.noah.library.lib;
+package com.noah.library.lib.luka;
 
 import android.app.Activity;
 import android.content.Context;
@@ -27,7 +27,7 @@ public class Code_LukaSharingPreferences {
         prefName = name;
     }
     // 유지
-    public void LukaSharingPreferences(Context context){
+    public Code_LukaSharingPreferences(Context context){
         mContext = context;
     }
 
