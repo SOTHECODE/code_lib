@@ -1,4 +1,4 @@
-package com.noah.library.lib;
+package com.noah.library.lib.noah;
 
 import java.util.regex.Pattern;
 
@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
  * 패턴 매니저
  */
 public class Code_NoahPatternManager {
-
 
     /**
      * email을 체크한다.

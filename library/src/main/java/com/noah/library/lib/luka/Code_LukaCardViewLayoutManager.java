@@ -1,4 +1,4 @@
-package com.noah.library.lib;
+package com.noah.library.lib.luka;
 
 import android.content.Context;
 
@@ -40,6 +40,9 @@ public class Code_LukaCardViewLayoutManager {
      * @return instance
      */
     public static Code_LukaCardViewLayoutManager getInstance() {
+
+
+
         if (instance == null) {
             synchronized (Code_LukaCardViewLayoutManager.class) {
                 if (instance == null) {
