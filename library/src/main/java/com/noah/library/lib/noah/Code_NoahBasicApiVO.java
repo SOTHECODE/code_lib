@@ -4,13 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class Code_NoahBasicApiVO<T> {
     @SerializedName("result")
-    private String result;
+    private String result; // OK , FAIL
     @SerializedName("error")
-    private String error;
+    private String error; // eroor msg
     @SerializedName("msg")
-    private String msg;
+    private String msg; // msg
     @SerializedName("data")
-    T data;
+    T data; // data
     public String getResult() {
         return result;
     }
