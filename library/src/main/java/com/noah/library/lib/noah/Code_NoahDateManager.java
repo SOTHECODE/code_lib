@@ -22,6 +22,16 @@ public class Code_NoahDateManager {
     private final static SimpleDateFormat kryyyyMMdd = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
 
 
+    private final static SimpleDateFormat stSdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+
+    private final static int JUST_BEFORE = 1;
+    private final static int HOUR_AGO = 60;
+    private final static int DAY_AGO = 1440;
+    private final static int WEEK_AGO = 10080;
+    private final static int MONTH_AGO = 43800;
+    private final static int YEAR_AGO = 525600;
+
+
     /**
      * 현재시간 String 반환
      * @return
@@ -235,4 +245,220 @@ public class Code_NoahDateManager {
 
     }
 
+
+
+
+
+    public static String subtractTime(String standardDate,String subtractDate){
+        String result = "";
+        try {
+            long sec = getSecond(standardDate,subtractDate);
+            result = selectorTimeZone(sec);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+
+        return result;
+    }
+
+    public static String subtractTime(String standardDate,Date subtractDate){
+        String result = "";
+        try {
+            long sec = getSecond(standardDate,subtractDate);
+            result = selectorTimeZone(sec);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+
+        return result;
+    }
+
+    public static String subtractTime(Date standardDate,String subtractDate){
+        String result = "";
+        try {
+            long sec = getSecond(standardDate,subtractDate);
+            result = selectorTimeZone(sec);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+
+        return result;
+    }
+
+    public static String subtractTime(Date standardDate,long subtractDate){
+        String result = "";
+        try {
+            long sec = getSecond(standardDate,subtractDate);
+            result = selectorTimeZone(sec);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+
+        return result;
+    }
+
+    public static String subtractTime(Date standardDate,Date subtractDate){
+        String result = "";
+        try {
+            long sec = getSecond(standardDate,subtractDate);
+            result = selectorTimeZone(sec);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+
+        return result;
+    }
+
+
+    public static long getSecond(String standardDate,String subtractDate) throws ParseException{
+        long standardDateTime = stSdf.parse(standardDate).getTime();
+        long subtractDateTime = stSdf.parse(subtractDate).getTime();
+
+        long diff = standardDateTime - subtractDateTime;
+
+        long sec = diff / 1000/60;
+
+        return sec;
+    }
+
+
+    public static long getSecond(String standardDate,Date subtractDate) throws ParseException{
+        long standardDateTime = stSdf.parse(standardDate).getTime();
+        long subtractDateTime = subtractDate.getTime();
+
+        return secondCalculation(standardDateTime, subtractDateTime);
+    }
+
+    public static long getSecond(Date standardDate,String subtractDate) throws ParseException{
+        long standardDateTime = standardDate.getTime();
+        long subtractDateTime = stSdf.parse(subtractDate).getTime();
+
+        long diff = standardDateTime - subtractDateTime;
+
+        long sec = diff / 1000/60;
+
+        return sec;
+    }
+
+    public static long getSecond(Date standardDate,long subtractDate) throws ParseException{
+        long standardDateTime = standardDate.getTime();
+        long subtractDateTime = subtractDate;
+
+        long diff = standardDateTime - subtractDateTime;
+
+        long sec = diff / 1000/60;
+
+        return sec;
+    }
+
+
+    public static long getSecond(Date standardDate,Date subtractDate) throws ParseException{
+        long standardDateTime = standardDate.getTime();
+        long subtractDateTime = subtractDate.getTime();
+
+        return secondCalculation(standardDateTime, subtractDateTime);
+    }
+
+    public static long secondCalculation(long standardDateTime , long subtractDateTime){
+        long diff = standardDateTime - subtractDateTime;
+        long sec = diff / 1000/60;
+        return sec;
+    }
+
+    public static String selectorTimeZone(long sec) throws Exception{
+        String result = "";
+        System.out.println(sec+":::sec::");
+        if(sec >= 0 && sec < JUST_BEFORE)
+            result = "방금";
+        else if(sec >= JUST_BEFORE && sec < HOUR_AGO) // 1분 ~59분
+            result = sec+"분" ;
+        else if(sec >= HOUR_AGO && sec < DAY_AGO)// 1시간 ~ 23시간
+            result = sec/HOUR_AGO+"시간" ;
+        else if(sec >= DAY_AGO && sec < WEEK_AGO)//1일 ~ 6일
+            result = sec/DAY_AGO+"일" ;
+        else if(sec >= WEEK_AGO && sec < MONTH_AGO)//1주 ~ 4주
+            result = sec/WEEK_AGO+"주";
+        else if(sec >= MONTH_AGO && sec < YEAR_AGO)
+            result = sec/MONTH_AGO + "달";
+        else if(sec >= YEAR_AGO)
+            result = sec/YEAR_AGO+"년";
+        else
+            result = "-";
+
+        return result;
+    }
+
+
+
+    public static String selectorTimeZone2(Date date1, Date date2){
+        String result = "";
+
+        long calDate = date1.getTime() - date2.getTime();
+        long calDateDays = calDate / (60 * 1000);
+
+        calDateDays = Math.abs(calDateDays);
+
+        System.out.println("두 날짜의 날짜 차이: " + calDateDays);
+
+        if(calDateDays >= 0 && calDateDays < JUST_BEFORE)
+            result = "방금 전";
+        else if(calDateDays >= JUST_BEFORE && calDateDays < HOUR_AGO) // 1분 ~59분
+            result = calDateDays+"분 전" ;
+        else if(calDateDays >= HOUR_AGO && calDateDays < DAY_AGO)// 1시간 ~ 23시간
+            result = calDateDays/HOUR_AGO+"시간 전" ;
+        else
+            result = stSdf.format(date1);
+
+
+        return result;
+    }
+
+    public static boolean getAbleStatus(Date date1, Date date2, int interval){
+        long calDate = date2.getTime() - date1.getTime();
+
+        Log.d("###","calDate : " + calDate);
+        Log.d("###","getIntervalTime(interval) * 2 : " + getIntervalTime(interval) * 2);
+
+
+        if ((calDate) > getIntervalTime(interval) * 2){
+            return false;
+        }
+
+        return true;
+    }
+
+    public static long getIntervalTime(int i){
+        long time = 0;
+
+        Log.d("###","인터벌 : " + i);
+
+
+        switch (i) {
+            case 0:
+                time = (long)(1 * 60 * 1000);
+                break;
+            case 1:
+                time = (long)(5 * 60 * 1000);
+                break;
+            case 2:
+                time = (long)(10 * 60 * 1000);
+                break;
+            case 3:
+                time = (long)(30 * 60 * 1000);
+                break;
+            case 4:
+                time = (long)(60 * 60 * 1000);
+                break;
+            case 5:
+                time = (long)(120 * 60 * 1000);
+                break;
+        }
+
+        return time;
+    }
 }

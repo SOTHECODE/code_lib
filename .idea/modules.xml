@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Noah_library.iml" filepath="$PROJECT_DIR$/.idea/modules/Noah_library.iml" group="Noah_library" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Noah_library/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/library.iml" group="Noah_library/library" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Noah_library.iml" filepath="$PROJECT_DIR$/.idea/modules/Noah_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Noah_library.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Noah_library.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Noah_library.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Noah_library.library.iml" />
     </modules>
   </component>
 </project>
