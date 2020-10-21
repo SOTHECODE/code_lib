@@ -3,7 +3,6 @@ package com.noah.library.lib.noah;
 import java.lang.reflect.Field;
 
 public class Code_NoahDataCopyManager<T> {
-
 	
 	/**
 	 * t2 값중 null이 아닌 필드 값을 t1으로 옮김
